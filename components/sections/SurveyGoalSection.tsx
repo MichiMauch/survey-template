@@ -82,7 +82,7 @@ export default function SurveyGoalSection() {
 
         {/* Interactive data visualization */}
         <div className="grid lg:grid-cols-3 gap-8">
-          {dataPoints.map((point, index) => (
+          {dataPoints.map((point) => (
             <motion.div
               key={point.title}
               initial={{ opacity: 0, y: 50, scale: 0.9 }}
@@ -96,7 +96,7 @@ export default function SurveyGoalSection() {
                 {/* Icon and header */}
                 <div className="text-center mb-6">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-100 text-gray-600 rounded-2xl mb-4 group-hover:scale-110 group-hover:bg-gray-200 transition-all duration-300" 
-                       style={{ '--hover-bg': '#1084C7' } as any}
+                       style={{ '--hover-bg': '#1084C7' } as React.CSSProperties}
                        onMouseEnter={(e) => {
                          e.currentTarget.style.backgroundColor = '#1084C7';
                          e.currentTarget.style.color = 'white';

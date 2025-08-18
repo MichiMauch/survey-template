@@ -98,7 +98,7 @@ export default function TargetAudienceSection() {
 
         {/* Interactive role cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {targetGroups.map((group, index) => (
+          {targetGroups.map((group) => (
             <motion.div
               key={group.name}
               initial={{ opacity: 0, y: 40, scale: 0.9 }}

@@ -4,8 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { LinkButton } from '@/components/ui/Button';
-import HeroBackground from '@/components/ui/HeroBackground';
-import { Clock, ArrowRight, Zap, Shield, BarChart3 } from 'lucide-react';
+import { ArrowRight, Zap, Shield, BarChart3 } from 'lucide-react';
 
 export default function CallToActionSection() {
   const ref = useRef(null);

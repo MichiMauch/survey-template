@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { BarChart3, Network, Lightbulb, Award, TrendingUp, Users, Sparkles, Target } from 'lucide-react';
+import { BarChart3, Network, Lightbulb, Award, Sparkles } from 'lucide-react';
 
 export default function WhyParticipateSection() {
   const ref = useRef(null);
