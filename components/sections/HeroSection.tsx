@@ -8,7 +8,7 @@ import { Sparkles, TrendingUp } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 overflow-hidden">
+    <section className="relative min-h-[70vh] lg:min-h-[75vh] bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 opacity-30">
         <HeroBackground />
@@ -17,7 +17,7 @@ export default function HeroSection() {
       {/* Additional gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-50/80 to-transparent" />
       
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-20 pb-8 lg:pb-12">
         <div className="max-w-5xl mx-auto text-center">
           
           {/* Floating badge */}
