@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { LinkButton } from '@/components/ui/Button';
-import { ArrowRight, Zap, Shield, BarChart3 } from 'lucide-react';
+import { ArrowRight, Zap, Shield } from 'lucide-react';
 
 export default function CallToActionSection() {
   const ref = useRef(null);
@@ -52,11 +52,6 @@ export default function CallToActionSection() {
                 </motion.div>
               </span>
             </LinkButton>
-            
-            <div className="text-blue-200 text-sm flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              Nur 5 Minuten • Völlig kostenfrei
-            </div>
           </div>
 
           {/* Trust indicators */}
@@ -64,7 +59,7 @@ export default function CallToActionSection() {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto"
+            className="mt-16 grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-md mx-auto"
           >
             <div className="text-center">
               <div className="flex items-center justify-center w-12 h-12 mx-auto mb-3">
@@ -78,23 +73,8 @@ export default function CallToActionSection() {
               </div>
               <div className="text-blue-200 text-sm">5 Min. Dauer</div>
             </div>
-            <div className="text-center">
-              <div className="flex items-center justify-center w-12 h-12 mx-auto mb-3">
-                <BarChart3 className="w-8 h-8 text-blue-300" />
-              </div>
-              <div className="text-blue-200 text-sm">Kostenlose Ergebnisse</div>
-            </div>
           </motion.div>
 
-          {/* Final motivational text */}
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="mt-12 text-blue-300 text-lg italic"
-          >
-            &ldquo;Gemeinsam gestalten wir die digitale Transformation der Verbände in der Schweiz.&rdquo;
-          </motion.p>
         </motion.div>
       </div>
     </section>

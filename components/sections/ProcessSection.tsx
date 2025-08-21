@@ -159,20 +159,6 @@ export default function ProcessSection() {
           </div>
         </div>
 
-        {/* Bottom note */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-12 text-center"
-        >
-          <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6 max-w-2xl mx-auto">
-            <p className="text-blue-800">
-              <strong>Tipp:</strong> Am Ende der Umfrage haben Sie die Möglichkeit, Ihre E-Mail-Adresse anzugeben, 
-              um die <strong>Ergebnisse der gesamten Studie</strong> zu erhalten.
-            </p>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

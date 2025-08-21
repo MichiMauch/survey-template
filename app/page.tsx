@@ -7,6 +7,7 @@ import ProcessSection from '@/components/sections/ProcessSection';
 import WhyParticipateSection from '@/components/sections/WhyParticipateSection';
 import CompanySection from '@/components/sections/CompanySection';
 import CallToActionSection from '@/components/sections/CallToActionSection';
+import FooterSection from '@/components/sections/FooterSection';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <WhyParticipateSection />
       <CompanySection />
       <CallToActionSection />
+      <FooterSection />
     </main>
   );
 }

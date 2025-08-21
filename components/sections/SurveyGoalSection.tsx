@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Target, Wrench, AlertTriangle, TrendingUp, BarChart3, Users, Lightbulb } from 'lucide-react';
+import { Target, Wrench, AlertTriangle, TrendingUp, BarChart3 } from 'lucide-react';
 
 export default function SurveyGoalSection() {
   const ref = useRef(null);
@@ -148,27 +148,6 @@ export default function SurveyGoalSection() {
           ))}
         </div>
 
-        {/* Bottom section with connection illustration */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 text-center"
-        >
-          <div className="max-w-4xl mx-auto bg-gradient-to-r from-indigo-50 via-blue-50 to-purple-50 rounded-3xl p-8 border border-indigo-100">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <div className="flex items-center gap-4">
-                <Users className="w-8 h-8 text-indigo-600" />
-                <span className="text-lg font-semibold text-gray-800">Austausch fördern</span>
-              </div>
-              <div className="hidden sm:block w-8 h-px bg-gradient-to-r from-indigo-300 to-purple-300" />
-              <div className="flex items-center gap-4">
-                <Lightbulb className="w-8 h-8 text-purple-600" />
-                <span className="text-lg font-semibold text-gray-800">Impulse geben</span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
 
       </div>
     </section>

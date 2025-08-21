@@ -3,50 +3,11 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Users, MessageSquare, TrendingUp, Settings, Shield, Heart, UserCheck } from 'lucide-react';
+import { Users, Heart } from 'lucide-react';
 
 export default function TargetAudienceSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const targetGroups = [
-    { 
-      icon: MessageSquare, 
-      name: 'Kommunikation', 
-      description: 'Verantwortliche für interne und externe Kommunikation',
-      delay: 0.1 
-    },
-    { 
-      icon: TrendingUp, 
-      name: 'Marketing', 
-      description: 'Experten für Mitgliedergewinnung und -bindung',
-      delay: 0.15 
-    },
-    { 
-      icon: Settings, 
-      name: 'IT', 
-      description: 'Technische Leitung und Digitalisierungs-Verantwortliche',
-      delay: 0.2 
-    },
-    { 
-      icon: Shield, 
-      name: 'Strategie', 
-      description: 'Strategische Planung und Organisationsentwicklung',
-      delay: 0.25 
-    },
-    { 
-      icon: UserCheck, 
-      name: 'Geschäftsleitung', 
-      description: 'Führungskräfte und Entscheidungsträger',
-      delay: 0.3 
-    },
-    { 
-      icon: Heart, 
-      name: 'Ehrenamtliche', 
-      description: 'Engagierte Vereinsmitglieder in Führungspositionen',
-      delay: 0.35 
-    },
-  ];
 
   return (
     <section ref={ref} className="relative py-24 bg-gradient-to-br from-gray-50 via-slate-50 to-gray-100 overflow-hidden">
@@ -96,48 +57,34 @@ export default function TargetAudienceSection() {
           </p>
         </motion.div>
 
-        {/* Interactive role cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {targetGroups.map((group) => (
-            <motion.div
-              key={group.name}
-              initial={{ opacity: 0, y: 40, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 40, scale: 0.9 }}
-              transition={{ duration: 0.6, delay: group.delay }}
-              className="group relative"
-            >
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-white/50 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">
-                
-                {/* Icon */}
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl mb-4 group-hover:scale-110 transition-all duration-300"
-                     onMouseEnter={(e) => {
-                       e.currentTarget.style.backgroundColor = '#1084C7';
-                       e.currentTarget.style.color = 'white';
-                     }}
-                     onMouseLeave={(e) => {
-                       e.currentTarget.style.backgroundColor = '';
-                       e.currentTarget.style.color = '';
-                     }}>
-                  <group.icon className="w-6 h-6" />
-                </div>
-                
-                {/* Title */}
-                <h3 className="text-xl font-semibold text-gray-800 mb-3 group-hover:text-gray-900 transition-colors duration-300">
-                  {group.name}
-                </h3>
-                
-                {/* Description */}
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {group.description}
-                </p>
-
-                {/* Hover indicator */}
-                <div className="absolute top-4 right-4 w-2 h-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" 
-                     style={{ backgroundColor: '#1084C7' }} />
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        {/* Simple list of target groups */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="max-w-3xl mx-auto mb-16"
+        >
+          <div className="bg-white rounded-2xl p-8 shadow-sm">
+            <ul className="space-y-4 text-lg text-gray-700">
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#1084C7' }} />
+                <span><strong>Kommunikation und Marketing:</strong> Verantwortliche für interne und externe Kommunikation sowie Mitgliedergewinnung</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#1084C7' }} />
+                <span><strong>IT und Digitalisierung:</strong> Technische Leitung und Digitalisierungs-Verantwortliche</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#1084C7' }} />
+                <span><strong>Strategie und Geschäftsleitung:</strong> Führungskräfte, Entscheidungsträger und strategische Planung</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#1084C7' }} />
+                <span><strong>Ehrenamtliche:</strong> Engagierte Vereinsmitglieder in Führungspositionen</span>
+              </li>
+            </ul>
+          </div>
+        </motion.div>
 
         {/* Inclusive message */}
         <motion.div
